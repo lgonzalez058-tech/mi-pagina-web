@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> MANOS A LA TIERRA - Demo Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ========================= NAVBAR ========================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logo + Marca -->
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="./LOGO.jpeg" alt="ROOTS&RISE" width="40" height="40" class="me-2">
+        MANOS A LA TIERRA
+      </a>
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Menú -->
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#carruselDemo">Carrusel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalDemo">Modal</a>
+          </li>
+        </ul>
+          <!-- Botón Offcanvas -->
+  <div class="ms-lg-3 mt-3 mt-lg-0">
+    <button class="btn btn-outline-light"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">
+      Recursos
+    </button>
+  </div>
+</div>
+</div> <!-- /container del navbar -->
+</nav> <!-- /navbar -->
+
+<!-- ========================= ENCABEZADO ========================= -->
+<header class="bg-light border-bottom">
+  <div class="container d-flex align-items-center justify-content-between py-3">
+    <h1 class="h3 mb-0">MANOS A LA TIERRA</h1>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#formContacto"></a></li>
+        <li class="nav-item"><a class="nav-link" href="#adopciones">REFORESTACIONES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#voluntariado">CAMPAÑAS AMBIENTALES</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ========================= FIN ENCABEZADO ========================= -->
+
+<!-- ========================= IMAGEN PRINCIPAL ========================= -->
+<section class="hero bg-dark text-white text-center d-flex align-items-center" 
+  style="height: 75vh; background:url(data:image/jpeg;base64,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)/cover no-repeat;"></section>
+  <div class="container">
+    <h2 class="display-4 fw-bold">No necesitamos que pocos lo hagan PERFECTO, necesitamos que muchos lo hagan CONSCIENTE</h2>
+    <p class="lead mb-4">REDUCE, RECICLA Y REUTILIZA</p>
+  </div>
+</section>
+<!-- ========================= FIN IMAGEN PRINCIPAL ========================= -->
+
+  <!-- ========================= ACORDEÓN ========================= -->
+<section id="acordeonDemo" class="py-4">
+  <div class="container">
+    <div class="accordion" id="accordion1">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Bienvenido a Nuestra Comunidad
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion1">
+          <div class="accordion-body">Manos a la tierra es una comunidad dedicada al cuidado del ambiente y la regeneración de nuestro entorno. Nacimos con la convicción de que cada acción, por pequeña que parezca, tiene el poder de transformar realidades. Hoy evolucionamos para crecer, conectarnos y elevar nuestra conciencia ambiental, fomentando la colaboración, la educación y el compromiso colectivo.
+
+            Nosotros creemos que la verdadera sostenibilidad surge de las raíces: del vínculo con la naturaleza, la responsabilidad individual y el trabajo en comunidad. Nuestro propósito es inspirar y acompañar a personas, proyectos y organizaciones en el camino hacia un futuro más verde, justo y equilibrado, donde la unión de esfuerzos se convierta en una fuerza capaz de generar impacto positivo y duradero..</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Nuestro Objetivo
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+          <div class="accordion-body">Inspirar y educar a las personas para adoptar hábitos sostenibles, compartir proyectos ambientales y construir juntos una comunidad comprometida con el cuidado del planeta..</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======================= FIN ACORDEÓN ======================= -->
+ <!-- ========================= COLLAPSE SIMPLE ========================= -->
+ <section id="collapseDemo" class="py-4">
+  <div class="container">
+    <!-- Botón para activar el colapso -->
+    <button class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse1"
+            aria-expanded="false"
+            aria-controls="collapse1">
+        Un Cambio Posible en 2025
+    </button>
+    <!-- Contenido colapsable -->
+    <div class="collapse mt-3" id="collapse1">
+      <div class="card card-body"></div>
+      En 2025, un cambio significativo contra la contaminación es posible gracias a la innovación tecnológica y una mayor conciencia global. Soluciones como la energía renovable, la captura de carbono y la economía circular son clave para esta transformación. Los principales factores que impulsan la contaminación son la quema de combustibles fósiles, la deforestación y la mala gestión de residuos. Tiendas de moda rápida como Shein y H&M contribuyen enormemente a este problema.
+
+    
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- ========================= MODAL ========================= -->
+<div class="modal fade" id="modalDemo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- modal-lg para más espacio -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cursos en oferta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- ========================= TABS EN MODAL ========================= -->
+        <ul class="nav nav-tabs" id="modalTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab"
+                    data-bs-target="#tab1" type="button" role="tab"
+                    aria-controls="tab1" aria-selected="true">
+              Cursos
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab2-tab" data-bs-toggle="tab"
+                    data-bs-target="#tab2" type="button" role="tab"
+                    aria-controls="tab2" aria-selected="false">
+              Precios
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab3-tab" data-bs-toggle="tab"
+                    data-bs-target="#tab3" type="button" role="tab"
+                    aria-controls="tab3" aria-selected="false">
+              Contacto
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content p-3 border border-top-0" id="modalTabContent">
+          <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <p>Aquí puedes describir los cursos en detalle.</p>
+          </div>
+          <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <p>Información sobre precios, promociones o descuentos.</p>
+          </div>
+          <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <p>Datos de contacto o links a tus redes sociales.</p>
+          </div>
+        </div>
+        <!-- ======================= FIN TABS EN MODAL ======================= -->
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ======================= FIN MODAL ======================= -->
+
+  <!-- ========================= FOOTER ========================= -->
+
+  <!-- ========================= CARRUSEL ========================= -->
+  <section id="carruselDemo" class="py-4">
+    <div class="container">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+        </div>
+        <!-- Slides -->
+        <div class="carousel-inner rounded shadow">
+          <div class="carousel-item active">
+            <img src="./LAVADO 3.jpeg" class="d-block w-100" alt="Imagen 1">
+          </div>
+          <div class="carousel-item">
+            <img src="./CUIDADO 1.jpeg" class="d-block w-100" alt="Imagen 2">
+          </div>
+          <div class="carousel-item">
+            <img src="./CUIDADO 2.jpeg" class="d-block w-100" alt="Imagen 3">
+          </div>
+        </div>
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+<!--FIN DE CARRUSEL-->
+<!-- ========================= Sesión 16 ACTIVIDAD ========================= -->
+<section class="py-4">
+  <div class="container">
+    <h4 class="mb-3">Pantalla md:2 arriba 1 abajo</h4>
+  <!--==Chicos, este row va a contener nuestras columnas 
+  el g-3 es para que hay una separacion entrelas filas/columnas y align-items-stretch 
+  es peça que todas las columnas tengan la misma altura==-->
+  <div class="row g-3 align-items-stretch">
+      <!--== columna 1 ==-->
+    <!-- ==chicos en movil (col-12)ocupa todo el ancho
+     pero a partir de pantallas md ocupa 8 de 12 espacios (dos tercios)==-->
+     <div class="col-12 col-md-8">
+      <div class="p-3 bg-primary text-white rounded h-100">
+        Columna 1
+        </div>
+      </div>
+      <!--== columna 2 ==-->
+      <!-- == igual que la columna 1, en movil ocupa todo el ancho 
+      pero a partir de pantallas md ocupa 4 de 12 espacios (un tercio)==-->
+      <div class="col-12 col-md-4">
+        <div class="p-3 bg-warning text-dark rounded h-100">
+          Columna 2
+        </div>
+      </div>
+      <!--== columna 3 ==-->
+      <!-- == En movil ocupa todo el ancho (col-12) ,
+       por eso va debajo de las otras dos columnas, y ocupa toda la fila==-->
+       <div class="col-12">
+        <div class="p-3 bg-success text-white text center rounded">
+          Columna 3
+          </div>
+        </div>
+
+    </div>
+  </div>
+  </section>
+  <section class="py-4">
+    <div class="container">
+      <h4 class="mb-3">Grid de 3 columnas</h4>
+      <div class="row g-3 boorder rounded p-3">
+        <div class="col-12 col-md-4">
+          <div class="p-3 bd-success text-dark rounded h-100">Columna 1</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-3 bd-danger text-white rounded h-100">Columna 2</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-3 bd-danger text-dark rounded h-100">Columna 3</div>
+        </div>
+     </div>
+     <p class="small text-muted mt-2">
+      En pantallas pequeñas (móviles) cada columna ocupa todo el ancho (12 de 12).
+     </p>
+    </div>
+    </section>
+    <!--Colores de bootstrap-->
+    <!--primary = azul 
+    secondary = gris
+    success = verde
+    danger = rojo
+    warning = amarillo
+    info = celeste
+    Light= gris claro
+    Dark = gris oscuro -->
+    <section class="py-4">
+      <div class="container">
+        <h4 class="mb-3">Ejemplos de espaciados y grid</h4>
+        <!--Estructura de espaciados-->
+        <div class="bg-warning text-dark p-2 mb-1">mb-1 margen inferior</div>
+        <div class="bg-success p-2 mb-3">mb-3 margen inferior 16px</div>
+        <div class="bg-info p-2 mb-5">mb-5 margen inferior 32px</div>
+        <p class="small text-muted">
+          Observa como cambia el espacio entre las cajas al cambiar el número...
+        </p>
+        <hr class="my-4 "> <!--my-4 aplica margen vertcal (top y bottom) de 16 px-->
+        <h4 class="mb-3">Grid (col-md-4 vs col-md-6)</h4>
+      </div>
+    </section>
+  <!-- ========================= CONTENIDO ========================= -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2>Manos a la tierra</h2>
+      <p class="lead">Usa el menú para abrir el modal o navegar al carrusel.</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDemo">
+        Abrir Modal
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ========================= MODAL ========================= -->
+  <div class="modal fade" id="modalDemo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cursos en oferta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Todos los talleres para mis alumnos de La Bancaria</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ======================= FIN MODAL ======================= -->
+
+ <!-- ========================= FORMULARIO DEMO ========================= -->
+ <section id="formDemo" class="py-4">
+  <div class="container">
+    <h3 class="mb-3">Formulario Interactivo <!-- aqui puedes colocar incluso un parentresis para que te sirva como guia y/o referencia--> </h3>
+    <!--
+      Este formulario usa .needs-validation y novalidate
+      para aplicar validación de Bootstrap con mi JS.
+      Cada control tiene su <label> e incluye mensajes de error.
+    -->
+    <form class="row g-3 needs-validation" novalidate>
+      <!-- Campo de texto -->
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre completo</label> <!-- La etiqueta Label se usa para definir una etiqueta descriptiva, como input, textarea o select -->
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          placeholder="Escribe tu nombre"
+          aria-describedby="ayudaNombre"
+          required
+        >
+        <div id="ayudaNombre" class="form-text">Tal como aparece en tu constancia.</div>
+        <div class="invalid-feedback">Por favor, escribe tu nombre.</div>
+      </div>
+      <!-- Email -->
+      <div class="col-md-6">
+        <label for="correo" class="form-label">Correo electrónico</label>
+        <input
+          type="email"
+          class="form-control"
+          id="correo"
+          name="correo"
+          placeholder="nombre@ejemplo.com"
+          required
+        >
+        <div class="invalid-feedback">Ingresa un correo válido.</div>
+      </div>
+      <!-- Input group (@usuario) -->
+      <div class="col-md-6">
+        <label for="usuario" class="form-label">Usuario de la plataforma</label>
+        <div class="input-group">
+          <span class="input-group-text" id="prefijoUsuario">@</span>
+          <input
+            type="text"
+            class="form-control"
+            id="usuario"
+            name="usuario"
+            aria-describedby="prefijoUsuario"
+            placeholder="profejoako"
+            required
+          >
+          <div class="invalid-feedback">Define un usuario.</div>
+        </div>
+      </div>
+      <!-- Select -->
+      <div class="col-md-6">
+        <label for="curso" class="form-label">Curso de interés</label>
+        <select class="form-select" id="curso" name="curso" required>
+          <option value="" selected disabled>Selecciona una opción</option>
+          <option value="ia_educacion">IA para educación</option>
+          <option value="productividad">Productividad digital</option>
+          <option value="programacion_web">Programación Web (HTML/CSS/JS)</option>
+        </select>
+        <div class="invalid-feedback">Selecciona un curso.</div>
+      </div>
+      <!-- Checkboxes, como su nombre lo indica, son casillas de verificacion -->
+      <div class="col-md-6">
+        <span class="form-label d-block mb-1">Temas que te interesan (elige varios)</span>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tema1" name="temas[]" value="prompts">
+          <label class="form-check-label" for="tema1">Prompts y buenas prácticas</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tema2" name="temas[]" value="apis" checked>
+          <label class="form-check-label" for="tema2">Consumo de APIs (seleccionado por defecto)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tema3" name="temas[]" value="ux" disabled>
+          <label class="form-check-label" for="tema3">UX/UI (desactivado)</label>
+        </div>
+      </div>
+      <!-- Radios, los cuales son importantes para que el usuaerio seleccione solo una opcion -->
+      <div class="col-md-6">
+        <span class="form-label d-block mb-1">Modalidad preferida</span>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="modalidad" id="mod1" value="presencial" required>
+          <label class="form-check-label" for="mod1">Presencial</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="modalidad" id="mod2" value="en_linea" checked>
+          <label class="form-check-label" for="mod2">En línea (seleccionada por defecto)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="modalidad" id="mod3" value="hibrida" disabled>
+          <label class="form-check-label" for="mod3">Híbrida (desactivada)</label>
+          <div class="invalid-feedback">Elige una modalidad.</div>
+        </div>
+      </div>
+      <!-- Textarea con label flotante -->
+      <div class="col-12">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Escribe tu mensaje"
+            id="mensaje"
+            name="mensaje"
+            style="height: 120px"
+            required
+          ></textarea>
+          <label for="mensaje">Mensaje</label>
+          <div class="invalid-feedback">Cuéntame brevemente tu necesidad.</div>
+        </div>
+      </div>
+      <!-- Archivo (opcional) -->
+      <div class="col-md-6">
+        <label for="archivo" class="form-label">Adjunta un archivo (opcional)</label>
+        <input class="form-control" type="file" id="archivo" name="archivo" accept=".pdf,.png,.jpg">
+        <div class="form-text">PDF o imagen (máx. 5 MB).</div>
+      </div>
+      <!-- Botones -->
+      <div class="col-12 d-flex gap-2">
+        <button class="btn btn-primary" type="submit">Enviar</button>
+        <button class="btn btn-outline-secondary" type="reset">Limpiar</button>
+      </div>
+      <!-- Alerta de éxito (la muestra el JS al enviar correctamente) -->
+      <div class="col-12 d-none" id="alertaExito">
+        <div class="alert alert-success mb-0" role="alert">
+          ¡Gracias! Tu formulario se envió correctamente.
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- ======================= FIN FORMULARIO  ======================= -->
+<!-- ========================= OFFCANVAS (Panel lateral derecho) ========================= -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Recursos rápidos</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p class="mb-3">Accesos útiles para tu demo:</p>
+    <div class="list-group mb-4">
+      <a href="#carruselDemo" class="list-group-item list-group-item-action">Ir al Carrusel</a>
+      <a href="#acordeonDemo" class="list-group-item list-group-item-action">Ver Acordeón</a>
+      <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modalDemo">
+        Abrir Modal
+      </a>
+    </div>
+    <h6 class="text-muted">Tip</h6>
+    <p class="small">
+      El offcanvas no necesita JS extra. Puedes cambiar el lado usando
+      <code>offcanvas-start</code>, <code>offcanvas-end</code>,
+      <code>offcanvas-top</code> o <code>offcanvas-bottom</code>.
+    </p>
+    <!-- (Opcional) un mini formulario -->
+    <form class="border rounded p-3">
+      <div class="mb-3">
+        <label for="correo" class="form-label">Déjame tu correo</label>
+        <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com">
+      </div>
+      <button type="button" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+</div>
+<!-- ======================= FIN OFFCANVAS ======================= -->
+
+Número de respuestas: 0
+<!-- ====== BOTÓN DE WHATSAPP ====== -->
+<a href="https://wa.me/5540777933" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome para los íconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;   /* Distancia desde abajo */
+  right: 20px;    /* Distancia desde la derecha */
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.whatsapp-float:hover {
+  background-color: #20b954;
+  transform: scale(1.1);
+}
+</style>
+                                                                                                                                             
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 MANOS A LA TIERRA | CUIDADO AMBIENTAL</p>
+    <p class="mb-0">Síguenos en 
+      <a href="www.tiktok.com/@rootandrisemx?_t=ZS-8z3R0g4RpEw&_r=1" target="_blank" class="text-white fw-bold">
+      <i class="fab fa-tiktok"></i> TikTok
+      </a> | 
+      <a href="https://www.instagram.com/manosalatierramx/" target="_blank" class="text-white fw-bold"> 
+        <i class="fab fa-instagram"></i> Instagram
+
+      </a>
+    </p>
+    </footer>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tu JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
